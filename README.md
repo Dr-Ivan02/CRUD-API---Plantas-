@@ -37,3 +37,17 @@ Tabla `plants`:
 | species          | TEXT    | Especie (por ejemplo, Aloe vera)  |
 | water_every_days | INTEGER | Días entre riegos (por defecto 7) |
 | created_at       | TEXT    | Fecha de registro                 |
+
+## Endpoints
+
+| Método | Ruta              | Descripción               |
+| ------ | ----------------- | ------------------------- |
+| GET    | `/api/plants`     | Lista todas las plantas   |
+| GET    | `/api/plants/:id` | Obtiene una planta por id |
+| POST   | `/api/plants`     | Registra una planta       |
+
+Ejemplo de cuerpo para `POST /api/plants`:
+
+```json
+{ "name": "Monstera de la sala", "species": "Monstera deliciosa", "water_every_days": 10 }
+```
