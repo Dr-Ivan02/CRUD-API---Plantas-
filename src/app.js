@@ -1,4 +1,5 @@
 const express = require('express');
+const plantsRoutes = require('./routes/plants.routes');
 
 const app = express();
 
@@ -8,6 +9,8 @@ app.use(express.json());
 app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
+
+app.use('/api/plants', plantsRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ error: 'Ruta no encontrada' });
