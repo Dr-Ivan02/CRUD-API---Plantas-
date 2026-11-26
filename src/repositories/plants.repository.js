@@ -15,4 +15,16 @@ function create({ name, species, water_every_days }) {
   return findById(lastInsertRowid);
 }
 
-module.exports = { findAll, findById, create };
+function update(id, { name, species, water_every_days }) {
+  const { changes } = db
+    .prepare('UPDATE plants SET name = ?, species = ?, water_every_days = ? WHERE id = ?')
+    .run(name, species, water_every_days, id);
+  return changes > 0 ? findById(id) : undefined;
+}
+
+function remove(id) {
+  const { changes } = db.prepare('DELETE FROM plants WHERE id = ?').run(id);
+  return changes > 0;
+}
+
+module.exports = { findAll, findById, create, update, remove };
