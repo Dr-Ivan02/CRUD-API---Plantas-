@@ -45,6 +45,8 @@ Tabla `plants`:
 | GET    | `/api/plants`     | Lista todas las plantas   |
 | GET    | `/api/plants/:id` | Obtiene una planta por id |
 | POST   | `/api/plants`     | Registra una planta       |
+| PUT    | `/api/plants/:id` | Actualiza una planta      |
+| DELETE | `/api/plants/:id` | Elimina una planta        |
 
 Ejemplo de cuerpo para `POST /api/plants`:
 
