@@ -4,7 +4,7 @@ API REST sencilla para gestionar plantas de interior (se utiliza Node.js + Expre
 
 ## Requisitos
 
-- Node.js 20 o superior
+- Node.js 22.13 o superior
 
 ## Instalación
 
