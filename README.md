@@ -53,3 +53,12 @@ Ejemplo de cuerpo para `POST /api/plants`:
 ```json
 { "name": "Monstera de la sala", "species": "Monstera deliciosa", "water_every_days": 10 }
 ```
+
+## Validaciones
+
+- `id` debe ser un entero positivo.
+- `name` y `species` son obligatorios (texto no vacío).
+- `water_every_days` es opcional (7 por defecto); si se envía, debe ser un entero mayor o igual a 1.
+
+Los errores de validación y el JSON mal formado responden `400` con un mensaje
+descriptivo.
