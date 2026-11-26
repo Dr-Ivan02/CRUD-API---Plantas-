@@ -4,7 +4,7 @@ API REST sencilla para gestionar plantas de interior (se utiliza Node.js + Expre
 
 ## Requisitos
 
-- Node.js 20 o superior
+- Node.js 22.13 o superior
 
 ## Instalación
 
@@ -20,3 +20,20 @@ npm start
 ```
 
 La API queda en `http://localhost:3000`. Para comprobarla: `GET /health`.
+
+## Base de datos
+
+Se usa SQLite mediante el módulo `node:sqlite` incluido en Node, sin
+dependencias externas. El archivo `data/plantas.db` se crea al iniciar el
+servidor y no se sube al repositorio. El esquema está definido en
+`src/db/schema.sql`.
+
+Tabla `plants`:
+
+| Campo            | Tipo    | Descripción                       |
+| ---------------- | ------- | --------------------------------- |
+| id               | INTEGER | Clave primaria autoincremental    |
+| name             | TEXT    | Nombre de la planta               |
+| species          | TEXT    | Especie (por ejemplo, Aloe vera)  |
+| water_every_days | INTEGER | Días entre riegos (por defecto 7) |
+| created_at       | TEXT    | Fecha de registro                 |
